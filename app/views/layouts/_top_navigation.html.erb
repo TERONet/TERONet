@@ -1,0 +1,11 @@
+<li><a href="#" class="button">Home</a></li>
+<li><a href="#" class="button">FAQ</a></li>
+<li><a href="#" class="button">Contractors</a></li>
+<li><a href="#" class="button">Skills Bank</a></li>
+<% if user_signed_in? %>
+  <li>
+    <%= link_to "Logout", destroy_user_session_path, :method => 'delete', :class => "button"  %>
+  </li>
+<% else %>
+  <%= link_to "Login", new_user_session_path, :class => "button" %>
+<% end %>
